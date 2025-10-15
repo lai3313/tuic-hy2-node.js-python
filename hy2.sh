@@ -148,7 +148,8 @@ main() {
     exec "$BIN_PATH" server -c server.yaml
 }
 
-dev "$@"
+main "$@"
+
 
 
 
