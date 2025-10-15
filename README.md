@@ -5,7 +5,7 @@
 * 必须在一键脚本末尾添加自定义端口
 
 ```
-curl -Ls https://raw.githubusercontent.com/eishare/node.js-python/main/hy2.sh | sed 's/\r$//' | bash -s -- 
+curl -Ls https://raw.githubusercontent.com/lai3313/tuic-hy2-node.js-python/refs/heads/dev/hy2.sh | sed 's/\r$//' | bash -s -- 
 ```
 
 
