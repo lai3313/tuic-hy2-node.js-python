@@ -78,9 +78,9 @@ ensure_cert() {
 
 # ---------- 写配置文件 ----------
 write_config() {
-cat > server.yaml <<EOF
+  cat > server.yaml <<EOF
 listen: ":${SERVER_PORT}"
-log_level: silent
+log_level: error
 tls:
   cert: "$(pwd)/${CERT_FILE}"
   key: "$(pwd)/${KEY_FILE}"
@@ -101,7 +101,7 @@ quic:
   initial_conn_receive_window: 131072
   max_conn_receive_window: 262144
 EOF
-    echo "✅ 写入配置 server.yaml（端口=${SERVER_PORT}, SNI=${SNI}, ALPN=${ALPN}）。"
+  echo "✅ 写入配置 server.yaml（端口=${SERVER_PORT}, SNI=${SNI}, ALPN=${ALPN}，日志等级=error，TLS跳过认证）。"
 }
 
 # ---------- 获取服务器 IP ----------
@@ -149,6 +149,7 @@ main() {
 }
 
 main "$@"
+
 
 
 
