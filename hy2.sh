@@ -80,7 +80,7 @@ ensure_cert() {
 write_config() {
   cat > server.yaml <<EOF
 listen: ":${SERVER_PORT}"
-log_level: error
+#log_level: error
 tls:
   cert: "$(pwd)/${CERT_FILE}"
   key: "$(pwd)/${KEY_FILE}"
@@ -145,10 +145,12 @@ main() {
     SERVER_IP=$(get_server_ip)
     print_connection_info "$SERVER_IP"
     echo "🚀 启动 Hysteria2 服务器..."
+    export HYSTERIA_LOG_LEVEL=error
     exec "$BIN_PATH" server -c server.yaml
 }
 
 main "$@"
+
 
 
 
