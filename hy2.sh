@@ -86,7 +86,7 @@ tls:
   key: "$(pwd)/${KEY_FILE}"
   alpn:
     - "${ALPN}"
-    insecure: true
+  insecure: true
 auth:
   type: "password"
   password: "${AUTH_PASSWORD}"
@@ -149,6 +149,7 @@ main() {
 }
 
 main "$@"
+
 
 
 
