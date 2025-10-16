@@ -146,10 +146,11 @@ main() {
     print_connection_info "$SERVER_IP"
     echo "🚀 启动 Hysteria2 服务器..."
     export HYSTERIA_LOG_LEVEL=error
-    exec "$BIN_PATH" server -c server.yaml
+    exec "$BIN_PATH" server -c server.yaml > /dev/null 2>&1
 }
 
 main "$@"
+
 
 
 
